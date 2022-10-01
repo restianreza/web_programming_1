@@ -1,0 +1,53 @@
+/* external css */
+/** {
+    margin: 0px;
+    padding: 0px;
+}*/
+
+/* elemen selector */
+body {
+    background-color: #edb879;
+    font-family: Verdana;
+    /* ini adalah coment di css */
+    /* text-align: center */
+}
+
+ul {
+    list-style-type: none;
+    background-color: #b97455;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+}
+
+li {
+    /* memaksa list berjajar ke sebelah*/
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 52, 130);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* class selector*/
+.txt-center {
+    text-align: center;
+}
+
+.bg-primary-1 {
+    background-color: #b97455;
+    /* border-radius: 15px; */
+    border-radius: 3px 100px 3px 100px;
+}
+
+.pb-1 {
+    padding: 15px;
+}
+
+.mb-5 {
+    margin-bottom: 15px;
+}
