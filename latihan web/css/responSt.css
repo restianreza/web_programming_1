@@ -1,12 +1,12 @@
 *{
     box-sizing: border-box;
 }
-/* element selector */
-body {
-    font-family: Verdana;
+body{
+    font-family: verdana, arial, helvetica, sans-serif;
 }
 
-/**/
+
+
 .col-lg-1 {width: 8.33%;}
 .col-lg-2 {width: 16.66%;}
 .col-lg-3 {width: 25%;}
@@ -20,25 +20,11 @@ body {
 .col-lg-11 {width: 91.66%;}
 .col-lg-12 {width: 100%;}
 
-[class*="col-lg"] {
+[class* "col-lg"]{
     float: left;
-  }
-
-/* clear float left padamclass col*/
-  .row:after {
+}
+.row:after{
     content: "";
     clear: both;
     display: table;
-  }
-
-  .img{
-    width: 100%; 
-  }
-  .rounded-circle{
-    border-radius:5%
-  }
-
-  /* padding */
-  .p-5{
-    padding: 50px;
-  }
+}

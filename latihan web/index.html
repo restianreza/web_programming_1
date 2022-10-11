@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>I learning</title>
+</head>
+<body>
+
+    <div class="bg-primary txt-center">
+     <h1>Belajar<span>Web</span></h1>
+      <p>program ini saya unakan untuk belajar web</p>
+      <hr>
+    </div>
+       
+    <div>
+        <h2 class="left-margin">test table</h2>
+
+        <table border="1" width="100%" class="bg-table">
+            <thead>
+                <tr>
+                    <th>judul</th>
+                     <th>baru</th>
+                     <th>program</th>
+                </tr>
+                <tr>
+                    <td>belajar</td>
+                    <td>buat</td>
+                    <td>program</td>
+                </tr>
+                <tr>
+                    <td>making</td>
+                    <td>portofolio</td>
+                    <td>web</td>
+                </tr>
+                <tr>
+                    <td>program</td>
+                    <td>web</td>
+                    <td>keren</td>
+                </tr>
+            </thead>
+        </table>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th rowspan="2">no.</th>
+                    <th rowspan="2">nama</th>
+                    <th colspan="2">gender</th>
+                </tr>
+                <tr>
+                    <th>pria/wanita</th>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>reza</td>
+                    <td>pria</td>
+                </tr>
+               
+            </thead>
+        </table>
+    </div>
+    <div>
+        <h2>membuat inputan text</h2>
+        <hr>
+        <form action="nama.html" method="post">
+            <div>
+                masukkan nama <br>
+                <input type="text" name="nama-lengkap" id="nama-lengkap" placeholder="Masukkan nama">
+            </div>
+            <div>
+                gender <br>
+                <input type="radio" name="gender" id="p">pria
+                <input type="radio" name="gender" id="w">wanita
+            </div>
+            <div>
+                alamat <br>
+                <textarea cols="20" rows="2"></textarea name="alamat" id="alamat">
+            </div>
+            <div>
+                jurusan <br>
+                <select name="jurusan" id="jurusan">
+                    <option value="If">
+                        Informatika
+                    </option>
+                    <option value="Si">
+                        Sistem informasi
+                    </option>
+                    <option value="Mj">
+                        Manajemen
+                    </option>                   
+                </select>
+            </div>
+            <div>
+                <button type="submit">daftar</button>
+                <button type="reset">reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

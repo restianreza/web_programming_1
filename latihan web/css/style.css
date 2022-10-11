@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(40, 40, 40);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+table{
+    background-color: #555555;
+}
+th{
+    font-family: sans-serif;
+    color: rgb(255, 233, 66);
+}
+td{
+    font-family: fantasy;
+}
+span{
+    color: rgb(255, 252, 68);
+}
+.bg-primary{
+    background-color: #000000e3;
+    border-radius: 0px 0px 0px 0px;
+}
+.txt-center{
+    text-align: center;
+}
+.left-margin{
+    margin-left: 10px;
+}
