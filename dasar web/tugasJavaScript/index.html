@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara penulisan JS</title>
+</head>
+
+<body>
+    <p id="nama"></p>
+    <p id="alamat">Jl Bendungan</p>
+    <P name="prodi">1</P>
+    <P name="prodi">2</P>
+
+    <!--inline js-->
+    <button onclick="alert('Selamat Datang')">Tekan Tombol Ini </button>
+
+    <hr>
+    <P id="npm"></P>
+    <P id="umur"></P>
+    <P id="status"></P>
+    <P id="hobi"></P>
+
+    <p id="mahasiswa"></p>
+
+
+    <!--internal js-->
+    <script>
+        document.getElementById('nama').innerHTML = "Reza Dwi Restian";
+        let alamat = document.getElementById('alamat');
+        alamat.innerHTML = " JL Rawa Bendung";
+        document.getElementsByName('prodi')[0].innerHTML = "Informatika";
+        document.getElementsByName('prodi')[1].innerHTML = "Sistem Informasi";
+    </script>
+    
+    <!--external JS-->
+    <p id="salam"></p>
+    <button onclick="salam()">Beri Salam</button>
+   
+    <script src=" script.js"></script>
+</body>
+
+</html>
