@@ -17,11 +17,11 @@
 let txtNpm = document.getElementById("npm")
 let txtNama = document.getElementById("nama")
 let listMhs = document.getElementById("listMahasiswa")
+let tblMhs = document.getElementById("tblMahasiswa")
+
 let data = []
-/* data = [ {npm: 123, nama: "abc"},
-            {npm:124, nama:"srf"}
-        ]
-*/
+// panggil funtion tampil()
+tampil()
 
 function simpan() {
     console.log("Button Simpan Ditekan")
@@ -55,8 +55,7 @@ function simpan() {
         localStorage.setItem("lsMahasiswa", JSON.stringify(dataLs))
 
     }
-    //panggil funtion tampil()
-    tampil()
+
 }
 
 function tampil() {
@@ -65,8 +64,15 @@ function tampil() {
     //gunakan forEach
     data.forEach(listData)
 
+    //ambil data local storage dengan key lsMahasiswa
+    let dataTampil = JSON.parse(localStorage.getItem("lsMahasiswa"))
+    dataTampil.forEach(listData)
+
 }
 
 function listData(item, index) {
+    // innerHtml elemen table id = "listMahasiswa" pada index.html
     listMhs.innerHTML += "<li>" + item.npm + "-" + item.nama + "</li>"
+    // innerHtml elemen table id = "tblMahasiswa" pada index.html
+    tblMhs.innerHTML += `<tr><td>${item.npm}</td><td>${item.nama}</td><tr>`
 }
