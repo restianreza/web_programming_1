@@ -23,25 +23,50 @@ let data = []
         ]
 */
 
-function simpan(){
+function simpan() {
     console.log("Button Simpan Ditekan")
 
     console.log(txtNpm.value)
-     console.log(txtNama.value)
+    console.log(txtNama.value)
     //simpan 
-    data.push({"npm" : txtNpm.value, "nama": txtNama.value})
-    tampil ()
+
+
+    //cek apakah ada data di local storagenya
+    if (localStorage.getItem("lsMahasiswa") === null) {
+        //jika localStorage dengan key lsMahasiswa belum ada
+        data.push({
+            "npm": txtNpm.value,
+            "nama": txtNama.value
+        })
+        //simpan localStorage dengan Key lsMahasiswa 
+        localStorage.setItem("lsMahasiswa", JSON.stringify(data))
+    } else {
+        //jika localStorage dengan key lsMahasiswa sudah ada/sudah disimpan
+
+        //Ambil dulu localStorage dengan key lsMahasiswa
+        let dataLs = JSON.parse(localStorage.getItem("lsMahasiswa"))
+        console.log(dataLs)
+        //push data baru ke dalam array
+        dataLs.push({
+            "npm": txtNpm.value,
+            "nama": txtNama.value
+        })
+        //simpan data baru ke dalam locakStorage
+        localStorage.setItem("lsMahasiswa", JSON.stringify(dataLs))
+
+    }
+    //panggil funtion tampil()
+    tampil()
 }
-function tampil(){
+
+function tampil() {
     // clear elemen listMahasiswa
     listMhs.innerHTML = ""
     //gunakan forEach
     data.forEach(listData)
-   
+
 }
 
-function listData(item, index){
-    listMhs.innerHTML += "<li>"+item.npm+"-"+item.nama+"</li>"
+function listData(item, index) {
+    listMhs.innerHTML += "<li>" + item.npm + "-" + item.nama + "</li>"
 }
-
-
