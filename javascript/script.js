@@ -44,14 +44,16 @@ function simpan() {
 }
 
 function tampil() {
-    lishMhs.innerHTML = ""
     data.forEach(listData)
+    //clear elemen tblMahasiswa
+    tblMhs.innerHTML = " "
+    lishMhs.innerHTML=""
     let dataTampil = JSON.parse(localStorage.getItem("lsMahasiswa"))
     dataTampil.forEach(listData)
 }
 
 function listData(item, index) {
-    lishMhs.innerHTML += "<li>" + item.npm + "-" + item.nama + "</li>"
+    lishMhs.innerHTML += "<li class='list-group-item'>" + item.npm + "-" + item.nama + "</li>"
 
     tblMhs.innerHTML += `<tr><td>${item.npm}</td><td>${item.nama}</td><tr>`
 }
