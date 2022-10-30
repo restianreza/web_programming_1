@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Data Penduduk</title>
+</head>
+<body>
+    <div>
+        <h2>Data Penduduk</h2>
+        Nik <br>
+        <input type="text" name="nik" id="nik"><br>
+        Nama Lengkap<br>
+        <input type="text" name="nama" id="nama"><br>
+        Alamat <br>
+        <input type="text" name="alamat" id="alamat"><br>
+        <button onclick="simpan()">Simpan</button>
+    </div>
+    <div>
+        <ul id ="listPenduduk"></ul>
+    </div>
+    <div>
+        <table border ="1" >
+            <thead>
+                <tr>
+                    <th>NIK</th>
+                    <th>Nama Lengkap</th>
+                    <th>Alamat</th>
+                </tr>
+            </thead>
+            <tbody id="tblPenduduk"></tbody>
+        </table>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
