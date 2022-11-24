@@ -9,8 +9,14 @@ let btnCreate = document.getElementById("btnCreate")
 getUser()
 
 function getUser() {
-    fetch("https://gorest.co.in/public/v2/users/")
-        .then(response => response.json())
+    fetch("https://gorest.co.in/public/v2/users/", {
+        headers: {
+            'Authorization': "Bearer 0517ffbd1a065d2c62b7ab999722bba2e4e17f80f10026134d1cfb04b04dfedf"
+        }
+    })
+
+
+    .then(response => response.json())
         .then(data => {
             console.log(data)
 
@@ -45,7 +51,7 @@ function deleteUser(id) {
         });
 }
 
-function createUser(statusSimpan = 0) {
+function createUser(statusSimpan = 0, id = 0) {
     if (statusSimpan == 0) {
         //simpan data
         console.log("Button simpan ditekan")
@@ -79,6 +85,35 @@ function createUser(statusSimpan = 0) {
             });
     } else {
         // Ubah Data
+        console.log("Button simpan ditekan")
+        fetch("https://gorest.co.in/public/v2/users/" + id, {
+                method: "PUT",
+                headers: {
+                    'content-type': 'application/json',
+                    'Authorization': "Bearer 0517ffbd1a065d2c62b7ab999722bba2e4e17f80f10026134d1cfb04b04dfedf"
+                },
+                body: JSON.stringify({
+                    "email": email.value,
+                    "name": name.value,
+                    "gender": gender.value,
+                    "status": status.value
+                })
+            })
+            .then(response => {
+                response.json()
+                console.log(response)
+                if (response.status == 201) {
+                    alert.innerHTML = `<div class="alert alert-success">User berhasil disimpan</div>`
+                } else {
+                    alert.innerHTML = `<div class="alert alert-danger">User gagal disimpan</div>`
+                }
+            })
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.log(error)
+            });
 
     }
 
@@ -99,7 +134,7 @@ function editUser(id) {
             btnCreate.innerHTML = "ubah"
                 // ubah onClick dengan menambahkan parameter "1"
                 //onClick = "create user(1)"
-            btnCreate.setAttribute("onClick", "create user (1)")
+            btnCreate.setAttribute("onClick", "create user (1," + id + ")")
 
         })
         .catch(error => {
