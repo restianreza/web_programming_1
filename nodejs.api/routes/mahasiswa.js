@@ -58,4 +58,20 @@ router.put('/:mahasiswaId', async (req, res) => {
     }
 })
 
+// Delete 
+router.delete('/:mahasiswaId', async (req, res) => {
+    try {
+        // delete data 
+        const mahasiswa = await Mahasiswa.deleteOne({
+            _id: req.params.mahasiswaId
+        })
+        // response
+        res.json(mahasiswa)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
+
 module.exports = router
